@@ -1,5 +1,7 @@
 public class Course {
 
+    //Arraylist?? Maybe ***
+
     //Attributes
     String CourseCode;
     String CourseName;
