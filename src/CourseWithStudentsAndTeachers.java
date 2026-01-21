@@ -1,39 +1,62 @@
+import java.util.Scanner;
+import java.util.ArrayList;
+
 public class CourseWithStudentsAndTeachers {
 
     //Attributes
-    String Student1;
-    String Student2;
-    String Student3;
-    String Student4;
-    String Student5;
-
-    String Teacher1;
-    String Teacher2;
+    ArrayList<String> Students = new ArrayList<>();
+    ArrayList<String> Teachers = new ArrayList<>();
 
     String CourseCode;
     String CourseName;
 
 
     //Constructors
-    public CourseWithStudentsAndTeachers(String CourseCode, String CourseName, String Student1, String Student2, String Student3,
-    String Student4, String Student5, String Teacher1, String Teacher2) {
+    public CourseWithStudentsAndTeachers(String CourseCode, String CourseName) {
         this.CourseCode = CourseCode;
         this.CourseName = CourseName;
-
-        this.Student1 = Student1;
-        this.Student2 = Student2;
-        this.Student3 = Student3;
-        this.Student4 = Student4;
-        this.Student5 = Student5;
-
-        this.Teacher1 = Teacher1;
-        this.Teacher2 = Teacher2;
 
     }
 
     //Methods
-
     public void DisplayBeforeAfter () {
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter at least 5 students: ");
+        String[] students = scanner.nextLine().split(",");
+
+        System.out.println("Remove students: ");
+        String[] removeStudents = scanner.nextLine().split(",");
+
+        System.out.println("Enter at least 2 teachers: ");
+        String[] teachers = scanner.nextLine().split(",");
+
+        for (int i = 0; i < students.length; i++) {
+            Students.add(students[i].trim());
+        }
+        for (int i = 0; i < teachers.length; i++) {
+            Teachers.add(teachers[i].trim());
+        }
+
+        System.out.println();
+        System.out.println("Students: ");
+        System.out.println(Students);
+        System.out.println();
+        System.out.println("Teachers: ");
+        System.out.println(Teachers);
+
+        for (int i = 0; i < removeStudents.length; i++) {
+            Students.remove(removeStudents[i]);
+        }
+
+        for (int i = 0; i < removeStudents.length; i++) {
+            if (i > 0) {
+                System.out.println();
+                System.out.println("Students after removal: ");
+                System.out.println(Students);
+            }
+        }
 
     }
 
