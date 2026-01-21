@@ -1,127 +1,102 @@
 public class Course {
 
     //Attributes
-    private String CourseCode;
-    private String CourseName;
-    private int MaxStudents;
-    private int MaxTeachers;
-    private String[] Students;
-    private String[] Teachers;
-    private int NumOfStudents;
-    private int NumOfTeachers;
+    private String cCode;
+    private String cName;
+    private int maxNumOfStudents;
+    private int maxNumOfTeachers;
+    private String[] students;
+    private String[] teachers;
+    private int numOfRegStudents;
+    private int numOfRegTeachers;
 
-    //Constructors - creates instance of entity based on code, name, max students / teachers
+    //Constructors
     public Course() {
-        System.out.println("Course not selected");
-    }
-    public Course(String CourseCode, String CourseName, int MaxStudents, int MaxTeachers) {
-        this.CourseCode = CourseCode;
-        this.CourseName = CourseName;
-        this.MaxStudents = MaxStudents;
-        this.MaxTeachers = MaxTeachers;
+        System.out.println("No course selected");
 
-        this.Students = new String[MaxStudents];
-        this.Teachers = new String[MaxTeachers];
+    }
+
+    public Course(String cCode, String cName, int maxNumOfStudents) {
+        this.cCode = cCode;
+        this.cName = cName;
+        this.maxNumOfStudents = maxNumOfStudents;
+        this.maxNumOfTeachers = 5;
+        this.students = new String[maxNumOfStudents];
+        this.teachers = new String[maxNumOfTeachers];
+
     }
 
     //Getters
-    public String GetCourseCode() {
-        return CourseCode;
+    public String getcCode() {
+        return cCode;
     }
-    public String GetCourseName() {
-        return CourseName;
-    }
-    public int GetNumOfStudents() {
-        return NumOfStudents;
-    }
-    public int GetNumOfTeachers() {
-        return NumOfTeachers;
+    public String getcName() {
+        return cName;
     }
 
     //Setters
-    public void SetCourseCode(String NewCourseCodes) {
-        this.CourseCode = NewCourseCodes;
+    public void setcCode(String cCode) {
+        this.cCode = cCode;
     }
-    public void SetCourseName(String NewCourseName) {
-        this.CourseName = NewCourseName;
+    public void setcName(String cName) {
+        this.cName = cName;
     }
 
     //Methods
-    public void AddStudent(String Name) {
-        if (NumOfStudents >= MaxStudents) {
-            System.out.println("Cannot add more students");
-            return;
+    public void addStudent(String student) {
+        if (numOfRegStudents < maxNumOfStudents) {
+            students[numOfRegStudents] = student;
+            numOfRegStudents++;
+        } else {
+            System.out.println("Course full");
         }
-        for (int i = 0; i < NumOfStudents; i++) {
-            if (Students[i].equals(Name)) {
-                System.out.println(Name + " is already registered");
-                return;
-            }
-
-        }
-        Students[NumOfStudents] = Name;
-        NumOfStudents++;
 
     }
-    public void DropStudent(String Name) {
-        for (int i = 0; i < NumOfStudents; i++) {
-            if (Students[i].equals(Name)) {
-                Students[i] = null;
-                return;
-            }
+    public void addTeacher(String teacher) {
+        if (numOfRegTeachers < maxNumOfTeachers) {
+            teachers[numOfRegTeachers] = teacher;
+            numOfRegTeachers++;
+        } else {
+            System.out.println("Teacher full");
         }
-        System.out.println("Student not found");
 
     }
+    public void dropStudent(String student) {
+        for (int i = 0; i < numOfRegStudents; i++) {
+            if (students[i].equals(student)) {
+                students[i] = null;
+                for (int j = i; j < numOfRegStudents - 1; j++) {
+                    students[j] = students[j + 1];
+                }
+                students[numOfRegStudents - 1] = null;
 
-    public void AddTeacher(String Name) {
-        if (NumOfTeachers >= MaxTeachers) {
-            System.out.println("Cannot add more teachers");
-            return;
-        }
-        for (int i = 0; i < NumOfTeachers; i++) {
-            if (Teachers[i].equals(Name)) {
-                System.out.println(Name + " is already registered");
-                return;
-            }
-
-        }
-        Teachers[NumOfTeachers] = Name;
-        NumOfTeachers++;
-
-    }
-    public void DropTeacher(String Name) {
-        for (int i = 0; i < NumOfTeachers; i++) {
-            if (Teachers[i].equals(Name)) {
-                Teachers[i] = null;
-                return;
-            }
-        }
-        System.out.println("Teacher not found");
-
-    }
-
-    public void DisplayAllStudents() {
-        if (NumOfStudents <= 0)
-            System.out.println("No students");
-
-        for (int i = 0; i < MaxStudents; i++) {
-            if (Students[i] != null) {
-                System.out.println(Students[i]);
+                numOfRegStudents--;
             }
         }
 
     }
-    public void DisplayAllTeachers() {
-        if (NumOfTeachers <= 0)
-            System.out.println("No teachers");
+    public void dropTeacher(String teacher) {
+        for (int i = 0; i < numOfRegTeachers; i++) {
+            if (teachers[i].equals(teacher)) {
+                teachers[i] = null;
+                for (int j = i; j < numOfRegTeachers - 1; j++) {
+                    teachers[j] = teachers[j + 1];
+                }
+                teachers[numOfRegTeachers - 1] = null;
 
-        for (int i = 0; i < MaxTeachers; i++) {
-            if (Teachers[i] != null) {
-                System.out.println(Teachers[i]);
+                numOfRegTeachers--;
             }
         }
-
+    }
+    public void showRegisteredStudents() {
+        for (int i = 0; i < numOfRegStudents; i++) {
+            System.out.println("  " + (i+1) + ". " + students[i]);
+        }
+    }
+    public void showRegisteredTeachers() {
+        for (int i = 0; i < numOfRegTeachers; i++) {
+            System.out.println("  " + (i+1) + ". " + teachers[i]);
+        }
     }
 
 }

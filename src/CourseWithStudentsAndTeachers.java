@@ -1,62 +1,29 @@
-import java.util.Scanner;
-import java.util.ArrayList;
-
 public class CourseWithStudentsAndTeachers {
 
-    //Attributes
-    ArrayList<String> Students = new ArrayList<>();
-    ArrayList<String> Teachers = new ArrayList<>();
+    public static void main(String[] args) {
 
-    String CourseCode;
-    String CourseName;
+        Course course = new Course("1ik345", "Kurs1", 30);
 
+        course.addStudent("Kevin");
+        course.addStudent("Deja");
+        course.addStudent("Neo");
+        course.addStudent("Karl");
+        course.addStudent("Bert");
 
-    //Constructors
-    public CourseWithStudentsAndTeachers(String CourseCode, String CourseName) {
-        this.CourseCode = CourseCode;
-        this.CourseName = CourseName;
+        course.addTeacher("Gustav");
+        course.addTeacher("Benjamin");
 
-    }
-
-    //Methods
-    public void DisplayBeforeAfter () {
-
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.println("Enter at least 5 students: ");
-        String[] students = scanner.nextLine().split(",");
-
-        System.out.println("Remove students: ");
-        String[] removeStudents = scanner.nextLine().split(",");
-
-        System.out.println("Enter at least 2 teachers: ");
-        String[] teachers = scanner.nextLine().split(",");
-
-        for (int i = 0; i < students.length; i++) {
-            Students.add(students[i].trim());
-        }
-        for (int i = 0; i < teachers.length; i++) {
-            Teachers.add(teachers[i].trim());
-        }
-
+        System.out.println("List of students registered in the course " + course.getcCode() + " " + course.getcName() + ": ");
+        course.showRegisteredStudents();
         System.out.println();
-        System.out.println("Students: ");
-        System.out.println(Students);
+        System.out.println("List of teachers involved in the course " + course.getcCode() + " " + course.getcName() + ": ");
+        course.showRegisteredTeachers();
         System.out.println();
-        System.out.println("Teachers: ");
-        System.out.println(Teachers);
 
-        for (int i = 0; i < removeStudents.length; i++) {
-            Students.remove(removeStudents[i]);
-        }
+        course.dropStudent("Karl");
 
-        for (int i = 0; i < removeStudents.length; i++) {
-            if (i > 0) {
-                System.out.println();
-                System.out.println("Students after removal: ");
-                System.out.println(Students);
-            }
-        }
+        System.out.println("List of remaining students in the course " + course.getcCode() + " " + course.getcName() + " after removing a student: ");
+        course.showRegisteredStudents();
 
     }
 

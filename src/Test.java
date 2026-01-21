@@ -6,9 +6,17 @@ public class Test {
 
       Scanner scanner = new Scanner(System.in);
 
-      CourseWithStudentsAndTeachers Course = new CourseWithStudentsAndTeachers("ik234", "Programmering");
+      CourseTask3 course = new CourseTask3("ik232", "något", 7, 5);
 
-      Course.DisplayBeforeAfter();
+      Student student1 = new Student("Kevin", 1, "Kev.Tra@hot.se");
+
+      course.addStudent(student1);
+
+      course.showRegisteredStudents();
+
+
+      course.showRegisteredTeachers();
+
 
     }
 

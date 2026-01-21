@@ -1,19 +1,19 @@
-public class Student {
+public class Teacher {
 
     //Attributes
     private String name;
-    private int ID;
+    private String role;
     private String email;
 
     //Constructor
-    public Student() {
-        System.out.println("No student");
+    public Teacher() {
+        System.out.println("No teacher");
 
     }
 
-    public Student(String name, int ID, String email) {
+    public Teacher(String name, String role, String email) {
         this.name = name;
-        this.ID = ID;
+        this.role = role;
         this.email = email;
 
     }
@@ -22,8 +22,8 @@ public class Student {
     public String getName() {
         return name;
     }
-    public int getID() {
-        return ID;
+    public String getRole() {
+        return role;
     }
     public String getEmail() {
         return email;
@@ -33,8 +33,8 @@ public class Student {
     public void setName(String name) {
         this.name = name;
     }
-    public void setID(int ID) {
-        this.ID = ID;
+    public void setRole(String role) {
+        this.role = role;
     }
     public void setEmail(String email) {
         this.email = email;
