@@ -10,7 +10,7 @@ public class Course {
     private int NumOfStudents;
     private int NumOfTeachers;
 
-    //Constructors - makes entity based on code, name, max students / teachers
+    //Constructors - creates instance of entity based on code, name, max students / teachers
     public Course() {
         System.out.println("Course not selected");
     }
