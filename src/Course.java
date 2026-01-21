@@ -1,16 +1,14 @@
 public class Course {
 
-    //Arraylist?? Maybe ***
-
     //Attributes
-    String CourseCode;
-    String CourseName;
-    int MaxStudents;
-    int MaxTeachers;
-    String[] Students;
-    String[] Teachers;
-    int NumOfStudents;
-    int NumOfTeachers;
+    private String CourseCode;
+    private String CourseName;
+    private int MaxStudents;
+    private int MaxTeachers;
+    private String[] Students;
+    private String[] Teachers;
+    private int NumOfStudents;
+    private int NumOfTeachers;
 
     //Constructors - makes entity based on code, name, max students / teachers
     public Course() {

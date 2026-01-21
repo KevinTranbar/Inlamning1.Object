@@ -7,7 +7,7 @@ public class Test {
         course.AddStudent("Kevin");
         course.AddStudent("Deja");
         course.AddStudent("Neo");
-        course.AddStudent("Neo");course.AddTeacher("Kevin");
+
         course.AddTeacher("Deja");
         course.AddTeacher("Neo");
         course.AddTeacher("hej");
