@@ -68,7 +68,7 @@ public class StudyProgram {
         System.out.println("Add student?: Y/N");
         String selection = scanner.nextLine();
         if (selection.equalsIgnoreCase("Y")) {
-            numOfStudents = 0;
+            numOfStudents = 0; //Resets per course object
             addStudent(course); //Sent to addStudent method
         }
 
