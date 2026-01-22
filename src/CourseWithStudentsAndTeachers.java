@@ -1,9 +1,12 @@
 public class CourseWithStudentsAndTeachers {
 
-    public static void main(String[] args) {
+    Course course; //Initiate Course class in this class to use Course attributes and such
 
-        Course course = new Course("1ik345", "Kurs1", 30);
+    public CourseWithStudentsAndTeachers(String cCode, String cName, int maxNumOfStudents) { //Create course object with Course class attributes
+        this.course = new Course(cCode, cName, maxNumOfStudents);
+    }
 
+    public void addStudentsTeachers() { //Add students and teachers to course object
         course.addStudent("Kevin");
         course.addStudent("Deja");
         course.addStudent("Neo");
@@ -13,6 +16,9 @@ public class CourseWithStudentsAndTeachers {
         course.addTeacher("Gustav");
         course.addTeacher("Benjamin");
 
+    }
+
+    public void displayCourse() {
         System.out.println("List of students registered in the course " + course.getcCode() + " " + course.getcName() + ": ");
         course.showRegisteredStudents();
         System.out.println();
@@ -24,6 +30,15 @@ public class CourseWithStudentsAndTeachers {
 
         System.out.println("List of remaining students in the course " + course.getcCode() + " " + course.getcName() + " after removing a student: ");
         course.showRegisteredStudents();
+
+    }
+
+    public static void main(String[] args) {
+
+        CourseWithStudentsAndTeachers course = new CourseWithStudentsAndTeachers("1ik345", "Kurs1", 30);
+
+        course.addStudentsTeachers();
+        course.displayCourse();
 
     }
 

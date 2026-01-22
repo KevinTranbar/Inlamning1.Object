@@ -43,18 +43,19 @@ public class CourseTask3 {
     }
 
     //Methods
-    public void addStudent(Student student) {
-        if (numOfRegStudents < maxNumOfStudents) {
-            students[numOfRegStudents] = student;
+    public void addStudent(String name, int ID, String email) {
+        if (numOfRegStudents < maxNumOfStudents) { //If possible, create student with Student method from Student class
+            students[numOfRegStudents] = new Student(name, ID, email);
             numOfRegStudents++;
         } else {
-            System.out.println("Course full");
+            System.out.println("Students full");
         }
 
+
     }
-    public void addTeacher(Teacher teacher) {
+    public void addTeacher(String name, String role, String email) {
         if (numOfRegTeachers < maxNumOfTeachers) {
-            teachers[numOfRegTeachers] = teacher;
+            teachers[numOfRegTeachers] = new Teacher(name, role, email);
             numOfRegTeachers++;
         } else {
             System.out.println("Teacher full");
@@ -64,13 +65,13 @@ public class CourseTask3 {
 
     public void showRegisteredStudents() {
         for (int i = 0; i < numOfRegStudents; i++) {
-            System.out.println(students[i].getName() + " " + students[i].getID() + " " + students[i].getEmail());
+            System.out.printf("%-4d %-18s %-20s %-30s%n", i, students[i].getName(), students[i].getID(), students[i].getEmail());
 
         }
     }
     public void showRegisteredTeachers() {
         for (int i = 0; i < numOfRegTeachers; i++) {
-            System.out.println(teachers[i].getName() + " " + teachers[i].getRole() + " " + teachers[i].getEmail());
+            System.out.printf("%-4d %-18s %-20s %-30s%n", i, teachers[i].getName(), teachers[i].getRole(), teachers[i].getEmail());
 
         }
     }
