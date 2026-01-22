@@ -13,6 +13,12 @@ public class Course {
     //Constructors
     public Course() {
         System.out.println("No course selected");
+        this.cCode = "";
+        this.cName = "";
+        this.maxNumOfStudents = 0;
+        this.maxNumOfTeachers = 0;
+        this.students = new String[0];
+        this.teachers = new String[0];
 
     }
 

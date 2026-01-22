@@ -20,13 +20,13 @@ public class CourseWithStudentsAndTeachersTask4 {
     }
 
     public void displayCourse() {
-        System.out.println("In the course " + course2.getcCode()//cour=parameter (with CourseWithStudentsAndTeachersTask4 datatype), course2=CourseTask3 object (in this class) to access method in CourseTask3 class
+        System.out.println("In the course " + course2.getcCode()
                 + " " + course2.getcName() + " are registered the following students: ");
         System.out.printf("%-4s %-18s %-20s %-30s%n", "No", "Name", "ID", "E-mail");
         course2.showRegisteredStudents();
         System.out.println();
 
-        System.out.println("In the course " + course2.getcCode()//cour=parameter (with CourseWithStudentsAndTeachersTask4 datatype), course2=CourseTask3 object (in this class) to access method in CourseTask3 class
+        System.out.println("In the course " + course2.getcCode()
                 + " " + course2.getcName() + " are involved the following teachers: ");
         System.out.printf("%-4s %-18s %-20s %-30s%n", "No", "Name", "Role", "E-mail");
         course2.showRegisteredTeachers();

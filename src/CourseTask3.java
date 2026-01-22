@@ -13,6 +13,12 @@ public class CourseTask3 {
     //Constructors
     public CourseTask3() {
         System.out.println("No course selected");
+        this.cCode = "";
+        this.cName = "";
+        this.maxNumOfStudents = 0;
+        this.maxNumOfTeachers = 0;
+        this.students = new Student[0];
+        this.teachers = new Teacher[0];
 
     }
 
@@ -65,13 +71,14 @@ public class CourseTask3 {
 
     public void showRegisteredStudents() {
         for (int i = 0; i < numOfRegStudents; i++) {
-            System.out.printf("%-4d %-18s %-20s %-30s%n", i, students[i].getName(), students[i].getID(), students[i].getEmail());
+            System.out.printf("%-4d %-18s %-20s %-30s%n", i + 1, students[i].getName(), students[i].getID(), students[i].getEmail());
 
         }
     }
+
     public void showRegisteredTeachers() {
         for (int i = 0; i < numOfRegTeachers; i++) {
-            System.out.printf("%-4d %-18s %-20s %-30s%n", i, teachers[i].getName(), teachers[i].getRole(), teachers[i].getEmail());
+            System.out.printf("%-4d %-18s %-20s %-30s%n", i + 1, teachers[i].getName(), teachers[i].getRole(), teachers[i].getEmail());
 
         }
     }
