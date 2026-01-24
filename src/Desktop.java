@@ -33,4 +33,5 @@ public class Desktop extends Computer {
     public double calculateShippingCost(double total) {
         return total * 0.10;
     }
+
 }
