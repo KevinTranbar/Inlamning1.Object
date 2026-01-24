@@ -1,20 +1,20 @@
-import java.util.Scanner;
-
 public class Test {
 
     public static void main(String[] args) {
 
-      Scanner scanner = new Scanner(System.in);
+        Desktop desktop1 = new Desktop(2, 8, 100, true, true, 500);
+        Laptop laptop1 = new Laptop(2, 8, 120, true, false, 250, 30);
 
-      CourseTask3 course = new CourseTask3("ik232", "något", 7, 5);
+        double price = desktop1.calculatePrice();
+        double price2 = laptop1.calculatePrice();
+
+        System.out.println(price);
+        System.out.println(price2);
 
 
-      course.showRegisteredStudents();
 
 
-      course.showRegisteredTeachers();
 
 
     }
-
 }

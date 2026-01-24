@@ -1,28 +1,40 @@
-public class Laptop {
+public class Laptop extends Computer {
 
-    //Attributes
-    int screenSize = 13;
+    int screenSize;
 
-    //Constructor
-    public Laptop() {
-
+    public Laptop(int processorSpeed, int memory, int storageSize, boolean hasDVD, boolean wirelessEnabled, double basePrice, int screenSize) {
+        super(processorSpeed, memory, storageSize, hasDVD, wirelessEnabled, basePrice);
+        this.screenSize = screenSize;
     }
 
-    //Methods
-    public void calculateProcessorPrice() {
-
+    public double calculateProcessorPrice() {
+        return processorSpeed * 20;
     }
-    public void calculateStoragePrice() {
-
+    public double calculateMemoryPrice() {
+        return memory * 80;
     }
-    public void calculateMemoryPrice() {
-
+    public double calculateStoragePrice() {
+        return  storageSize * 7;
     }
-    public void calculatePrice() {
+    public double calculatePrice() {
 
+        double total = basePrice;
+
+        total += calculateProcessorPrice();
+        total += calculateMemoryPrice();
+        total += calculateStoragePrice();
+
+        if (hasDVD) {
+            total += 100;
+        }
+        if (wirelessEnabled) {
+            total += 30;
+        }
+        total += (screenSize - 13) * 50;
+
+        return total + calculateShippingCost(total);
     }
-    public void calculateShippingPrice() {
-
+    public double calculateShippingCost(double total) {
+        return total * 0.07;
     }
-
 }

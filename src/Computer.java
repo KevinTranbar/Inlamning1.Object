@@ -1,6 +1,5 @@
-public class Computer {
+public abstract class Computer {
 
-    //Attributes
     int processorSpeed;
     int memory;
     int storageSize;
@@ -8,7 +7,6 @@ public class Computer {
     boolean wirelessEnabled;
     double basePrice;
 
-    //Constructor
     public Computer(int processorSpeed, int memory, int storageSize, boolean hasDVD, boolean wirelessEnabled, double basePrice) {
         this.processorSpeed = processorSpeed;
         this.memory = memory;
@@ -19,21 +17,10 @@ public class Computer {
 
     }
 
-    //Methods
-    public void calculateProcessorPrice() {
-
-    }
-    public void calculateStoragePrice() {
-
-    }
-    public void calculateMemoryPrice() {
-
-    }
-    public void calculatePrice() {
-
-    }
-    public void calculateShippingPrice() {
-
-    }
+    public abstract double calculateProcessorPrice();
+    public abstract double calculateMemoryPrice();
+    public abstract double calculateStoragePrice();
+    public abstract double calculatePrice();
+    public abstract double calculateShippingCost(double price);
 
 }

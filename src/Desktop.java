@@ -1,25 +1,36 @@
-public class Desktop {
+public class Desktop extends Computer {
 
-    //Constructor
-    public Desktop() {
-
+    public Desktop(int processorSpeed, int memory, int storageSize, boolean hasDVD, boolean wirelessEnabled, double basePrice) {
+        super(processorSpeed, memory, storageSize, hasDVD, wirelessEnabled, basePrice);
     }
 
-    //Methods
-    public void calculateProcessorPrice() {
-
+    public double calculateProcessorPrice() {
+        return processorSpeed * 25;
     }
-    public void calculateStoragePrice() {
-
+    public double calculateMemoryPrice() {
+        return memory * 100;
     }
-    public void calculateMemoryPrice() {
-
+    public double calculateStoragePrice() {
+        return  storageSize * 5;
     }
-    public void calculatePrice() {
+    public double calculatePrice() {
 
+        double total = basePrice;
+
+        total += calculateProcessorPrice();
+        total += calculateMemoryPrice();
+        total += calculateStoragePrice();
+
+        if (hasDVD) {
+            total += 70;
+        }
+        if (wirelessEnabled) {
+            total += 45;
+        }
+
+        return total + calculateShippingCost(total);
     }
-    public void calculateShippingPrice() {
-
+    public double calculateShippingCost(double total) {
+        return total * 0.10;
     }
-
 }
