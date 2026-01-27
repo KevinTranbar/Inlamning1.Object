@@ -1,3 +1,5 @@
+package Task3_4_5;
+
 public class CourseTask3 {
 
     //Attributes
@@ -50,7 +52,7 @@ public class CourseTask3 {
 
     //Methods
     public void addStudent(String name, int ID, String email) {
-        if (numOfRegStudents < maxNumOfStudents) { //If possible, create student with Student method from Student class
+        if (numOfRegStudents < maxNumOfStudents) { //If possible, create student with Task3_4.Student method from Task3_4.Student class
             students[numOfRegStudents] = new Student(name, ID, email);
             numOfRegStudents++;
         } else {

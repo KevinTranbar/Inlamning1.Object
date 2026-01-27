@@ -1,3 +1,5 @@
+package Task6;
+
 public abstract class Computer {
 
     int processorSpeed;

@@ -1,3 +1,6 @@
+import Task6.Desktop;
+import Task6.Laptop;
+
 public class Test {
 
     public static void main(String[] args) {

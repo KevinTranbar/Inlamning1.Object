@@ -1,8 +1,10 @@
+package Task3_4_5;
+
 public class CourseWithStudentsAndTeachersTask4 {
 
-    CourseTask3 course2; //Initiate CourseTask3 class in this class to use CourseTask3 attributes and such (**CAN'T ASSIGN SOMETHING THAT HASN'T BEEN DECLARED***)
+    CourseTask3 course2; //Initiate Task3_4.CourseTask3 class in this class to use Task3_4.CourseTask3 attributes and such (**CAN'T ASSIGN SOMETHING THAT HASN'T BEEN DECLARED***)
 
-    public CourseWithStudentsAndTeachersTask4(String cCode, String cName, int maxNumOfStudents, int maxNumOfTeachers) { //Create course object with CourseTask3 class attributes
+    public CourseWithStudentsAndTeachersTask4(String cCode, String cName, int maxNumOfStudents, int maxNumOfTeachers) { //Create course object with Task3_4.CourseTask3 class attributes
         this.course2 = new CourseTask3(cCode, cName, maxNumOfStudents, maxNumOfTeachers);
 
     }

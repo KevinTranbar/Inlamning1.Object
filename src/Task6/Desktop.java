@@ -1,3 +1,5 @@
+package Task6;
+
 public class Desktop extends Computer {
 
     public Desktop(int processorSpeed, int memory, int storageSize, boolean hasDVD, boolean wirelessEnabled, double basePrice) {

@@ -1,3 +1,5 @@
+package Task6;
+
 public class Laptop extends Computer {
 
     int screenSize;
