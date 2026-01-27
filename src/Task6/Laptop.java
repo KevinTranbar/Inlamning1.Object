@@ -2,7 +2,7 @@ package Task6;
 
 public class Laptop extends Computer {
 
-    int screenSize;
+    private int screenSize;
 
     public Laptop(int processorSpeed, int memory, int storageSize, boolean hasDVD, boolean wirelessEnabled, double basePrice, int screenSize) {
         super(processorSpeed, memory, storageSize, hasDVD, wirelessEnabled, basePrice);
