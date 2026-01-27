@@ -59,7 +59,6 @@ public class CourseTask3 {
             System.out.println("Students full");
         }
 
-
     }
     public void addTeacher(String name, String role, String email) {
         if (numOfRegTeachers < maxNumOfTeachers) {
