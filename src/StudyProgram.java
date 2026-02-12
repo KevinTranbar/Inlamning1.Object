@@ -27,6 +27,7 @@ public class StudyProgram {
                 System.exit(1);
             }
         }
+        scanner.close();
 
     }
 
@@ -72,6 +73,7 @@ public class StudyProgram {
             addStudent(course); //Sent to addStudent method
         }
 
+        scanner.close();
         mainInterface();
 
     }
@@ -100,6 +102,7 @@ public class StudyProgram {
         course.addStudent(name, ID, email);
         numOfStudents++;
 
+        scanner.close();
         addStudent(course);
 
     }
