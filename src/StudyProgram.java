@@ -36,8 +36,7 @@ public class StudyProgram {
         if (courses.isEmpty()) {
             System.out.println("No courses registered yet");
         } else {
-            for (int i = 0; i < courses.size(); i++) { //Can be replaced with (CourseTask3 course : courses)
-                CourseTask3 course = courses.get(i); //Get i index of arraylist courses
+            for (CourseTask3 course : courses) {
                 System.out.println("In the course " + course.getcCode() + " " + course.getcName() + " are registered the following students: ");
                 System.out.printf("%-4s %-18s %-20s %-30s%n", "No", "Name", "ID", "E-mail");
                 course.showRegisteredStudents();
