@@ -1,7 +1,7 @@
 public class Desktop extends Computer {
 
     public Desktop(int processorSpeed, int memory, int storageSize, boolean hasDVD, boolean wirelessEnabled, double basePrice) {
-        super(processorSpeed, memory, storageSize, hasDVD, wirelessEnabled, basePrice);
+        super(processorSpeed, memory, storageSize, hasDVD, wirelessEnabled, basePrice); //Doorway to parent constructor
     }
 
     public double calculateProcessorPrice() {
