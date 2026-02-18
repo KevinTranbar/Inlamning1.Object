@@ -24,6 +24,22 @@ public class Test {
         System.out.println(course.getcCode() + " " + course.getcName());
         course.showRegisteredStudents();
 
+         */
+
+        Course course = new Course("12312", "3rqr", 10);
+
+        course.addStudent("Kevin");
+        course.addStudent("Deja");
+        course.addStudent("Alex");
+        course.addStudent("Neo");
+        course.addStudent("Hej");
+
+        course.showRegisteredStudents();
+
+        course.dropStudent("Alex");
+
+        course.showRegisteredStudents();
+
 
 
 

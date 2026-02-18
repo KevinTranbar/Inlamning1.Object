@@ -1,11 +1,9 @@
-package Task3_4_5;
-
-import java.util.ArrayList;
 import java.util.Scanner;
 
-public class StudyProgram {
+public class StudyProgram2 {
 
-    private ArrayList<CourseTask3> courses = new ArrayList<>();
+    private CourseTask3[] courses = new CourseTask3[100];
+    private int numOfCourses = 0;
     private int maxNumOfStudents;
     private int numOfStudents;
 
@@ -35,13 +33,13 @@ public class StudyProgram {
 
     public void displayCourses() { //Displays all past and present courses
 
-        if (courses.isEmpty()) {
+        if (numOfCourses == 0) {
             System.out.println("No courses registered yet");
         } else {
-            for (CourseTask3 course : courses) {
-                System.out.println("In the course " + course.getcCode() + " " + course.getcName() + " are registered the following students: ");
+            for (int i = 0; i < numOfCourses; i++) {
+                System.out.println("In the course " + courses[i].getcCode() + " " + courses[i].getcName() + " are registered the following students: ");
                 System.out.printf("%-4s %-18s %-20s %-30s%n", "No", "Name", "ID", "E-mail");
-                course.showRegisteredStudents();
+                courses[i].showRegisteredStudents();
                 System.out.println();
             }
         }
@@ -65,7 +63,8 @@ public class StudyProgram {
 
         CourseTask3 course = new CourseTask3(courseCode, courseName, maxNumOfStudents, maxTeachers);
 
-        courses.add(course);
+        courses[numOfCourses] = course;
+        numOfCourses++;
 
         System.out.println("Add student?: Y/N");
         String selection = scanner.nextLine();
@@ -108,7 +107,7 @@ public class StudyProgram {
 
     public static void main(String[] args) {
 
-        StudyProgram studyProgram = new StudyProgram();
+        StudyProgram2 studyProgram = new StudyProgram2();
         studyProgram.mainInterface();
 
     }

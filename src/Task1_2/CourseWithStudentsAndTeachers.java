@@ -2,7 +2,7 @@ package Task1_2;
 
 public class CourseWithStudentsAndTeachers {
 
-    Course course; //Initiate Course class in this class to use Course attributes and such
+    Course course; //Declare Course in this class to use Course attributes and such
 
     public CourseWithStudentsAndTeachers(String cCode, String cName, int maxNumOfStudents) { //Create course object with Course class attributes
         this.course = new Course(cCode, cName, maxNumOfStudents);
