@@ -1,13 +1,11 @@
-package Task6;
+abstract class Computer {
 
-public abstract class Computer {
-
-    int processorSpeed;
-    int memory;
-    int storageSize;
-    boolean hasDVD;
-    boolean wirelessEnabled;
-    double basePrice;
+    protected int processorSpeed;
+    protected int memory;
+    protected int storageSize;
+    protected boolean hasDVD;
+    protected boolean wirelessEnabled;
+    protected double basePrice;
 
     public Computer(int processorSpeed, int memory, int storageSize, boolean hasDVD, boolean wirelessEnabled, double basePrice) {
         this.processorSpeed = processorSpeed;
@@ -19,10 +17,10 @@ public abstract class Computer {
 
     }
 
-    public abstract double calculateProcessorPrice();
-    public abstract double calculateMemoryPrice();
-    public abstract double calculateStoragePrice();
-    public abstract double calculatePrice();
-    public abstract double calculateShippingCost(double price);
+    protected abstract double calculateProcessorPrice();
+    protected abstract double calculateMemoryPrice();
+    protected abstract double calculateStoragePrice();
+    protected abstract double calculatePrice();
+    protected abstract double calculateShippingCost(double price);
 
 }
