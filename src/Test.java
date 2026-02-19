@@ -31,11 +31,15 @@ public class Test {
         course1.addStudent("Neo");
         course1.addStudent("Hej");
 
-        course.showRegisteredStudents();
+        System.out.println();
 
-        course.dropStudent("Alex");
+        course1.showRegisteredStudents();
 
-        course.showRegisteredStudents();
+        course1.dropStudent("Alex");
+
+        System.out.println();
+
+        course1.showRegisteredStudents();
 
 
 
