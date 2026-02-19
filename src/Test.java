@@ -14,7 +14,6 @@ public class Test {
 
         System.out.println(price);
         System.out.println(price2);
-         */
 
         Course course = new Course("ik321", "Prog", 2);
         course.addStudent("Kevin");
@@ -24,13 +23,13 @@ public class Test {
         course.showRegisteredStudents();
 
 
-        Course course = new Course("12312", "3rqr", 10);
+        Course course1 = new Course("12312", "3rqr", 10);
 
-        course.addStudent("Kevin");
-        course.addStudent("Deja");
-        course.addStudent("Alex");
-        course.addStudent("Neo");
-        course.addStudent("Hej");
+        course1.addStudent("Kevin");
+        course1.addStudent("Deja");
+        course1.addStudent("Alex");
+        course1.addStudent("Neo");
+        course1.addStudent("Hej");
 
         course.showRegisteredStudents();
 

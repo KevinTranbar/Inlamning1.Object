@@ -1,3 +1,5 @@
+package Task3_4_5;
+
 import java.util.Scanner;
 
 public class StudyProgram2 {
